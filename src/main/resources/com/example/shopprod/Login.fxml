@@ -12,18 +12,18 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopprod.LoginController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="side_pane" prefHeight="500.0" prefWidth="400.0" styleClass="gradient" stylesheets="@scratch.css">
+            <AnchorPane fx:id="side_pane" prefHeight="500.0" prefWidth="400.0" styleClass="gradient" stylesheets="@scratch.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label layoutX="86.0" layoutY="357.0" prefHeight="44.0" prefWidth="229.0" styleClass="createacc" text="Create Account">
                      <font>
                         <Font name="Arial" size="27.0" />
                      </font>
                   </Label>
-                  <Button fx:id="create_account" layoutX="97.0" layoutY="416.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="207.0" styleClass="create" text="Create new account">
+                  <Button fx:id="create_account" layoutX="97.0" layoutY="416.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="35.0" prefWidth="207.0" styleClass="create" text="Create new account" AnchorPane.bottomAnchor="49.0">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -38,9 +38,14 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
+                  <Button fx:id="already_account" layoutX="97.0" layoutY="416.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="35.0" prefWidth="207.0" styleClass="create" text="Already have an account?" visible="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="login_form" layoutX="400.0" prefHeight="500.0" prefWidth="400.0" styleClass="bg" stylesheets="@scratch.css">
+            <AnchorPane fx:id="login_form" layoutX="400.0" prefHeight="500.0" prefWidth="400.0" styleClass="bg" stylesheets="@scratch.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label layoutX="23.0" layoutY="65.0" prefHeight="75.0" prefWidth="292.0" stylesheets="@scratch.css" text="Login Account">
                      <font>
@@ -73,7 +78,7 @@
                   </Hyperlink>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="register_form" prefHeight="500.0" prefWidth="400.0" styleClass="bg" stylesheets="@scratch.css" visible="false">
+            <AnchorPane fx:id="register_form" prefHeight="500.0" prefWidth="400.0" styleClass="bg" stylesheets="@scratch.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label layoutX="22.0" layoutY="26.0" prefHeight="75.0" prefWidth="337.0" stylesheets="@scratch.css" text="Register Account">
                      <font>
@@ -84,32 +89,27 @@
                         <String fx:value="for" />
                      </styleClass>
                   </Label>
-                  <TextField fx:id="reg_username" layoutX="63.0" layoutY="125.0" prefHeight="44.0" prefWidth="255.0" promptText="Username" styleClass="fields">
+                  <TextField fx:id="reg_username" layoutX="63.0" layoutY="124.0" prefHeight="44.0" prefWidth="255.0" promptText="Username" styleClass="fields">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <PasswordField fx:id="reg_password" layoutX="63.0" layoutY="233.0" prefHeight="44.0" prefWidth="255.0" promptText="Password" styleClass="fields">
+                  <PasswordField fx:id="reg_password" layoutX="63.0" layoutY="243.0" prefHeight="44.0" prefWidth="255.0" promptText="Password" styleClass="fields">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </PasswordField>
-                  <Button fx:id="reg_signup" layoutX="86.0" layoutY="366.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="229.0" styleClass="button2" text="Sign up">
+                  <Button fx:id="reg_signup" layoutX="86.0" layoutY="389.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="33.0" prefWidth="229.0" styleClass="button2" text="Sign up">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Hyperlink fx:id="already_account" layoutX="103.0" layoutY="415.0" prefHeight="10.0" prefWidth="194.0" styleClass="hyper" text="Already have an account?">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Hyperlink>
-                  <TextField fx:id="reg_email" layoutX="63.0" layoutY="181.0" prefHeight="44.0" prefWidth="255.0" promptText="Email" styleClass="fields">
+                  <TextField fx:id="reg_email" layoutX="63.0" layoutY="185.0" prefHeight="44.0" prefWidth="255.0" promptText="Email" styleClass="fields">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <PasswordField fx:id="reg_re_passowrd" layoutX="64.0" layoutY="285.0" prefHeight="44.0" prefWidth="255.0" promptText="Repeat password" styleClass="fields">
+                  <PasswordField fx:id="reg_re_passowrd" layoutX="63.0" layoutY="306.0" prefHeight="44.0" prefWidth="255.0" promptText="Repeat password" styleClass="fields">
                      <font>
                         <Font size="15.0" />
                      </font>
