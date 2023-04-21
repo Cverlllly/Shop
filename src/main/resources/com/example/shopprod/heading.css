@@ -1,0 +1,8 @@
+@font-face{
+    font-family: 'test';
+    src: url('Gecko_PersonalUseOnly.ttf');
+}
+.name{
+ -fx-font-family: 'test';
+ -fx-font-size:50px;
+}
