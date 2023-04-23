@@ -9,13 +9,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+
+    private static Scene scene;
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root= FXMLLoader.load(getClass().getResource("Login.fxml"));
-        Scene scene=new Scene(root);
+        scene = new Scene(loadFXML("Login"));
         stage.setTitle("Shopify");
-        stage.setMinHeight(550);
-        stage.setMinWidth(850);
+        stage.setMinHeight(520);
+        stage.setMinWidth(800);
 
         stage.setScene(scene);
         stage.show();
@@ -23,5 +24,14 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    static void setRoot(String fxml) throws IOException {
+        scene.setRoot(loadFXML(fxml));
+    }
+
+    private static Parent loadFXML(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml + ".fxml"));
+        return fxmlLoader.load();
     }
 }

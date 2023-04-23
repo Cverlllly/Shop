@@ -1,0 +1,37 @@
+[
+  {
+    "users_id": 1,
+    "username": "admin",
+    "password": "admin",
+    "email": "admin.admin@gmail.com",
+    "created": "2023-04-21T15:05:53.172+00:00"
+  },
+  {
+    "users_id": 4,
+    "username": "Anej",
+    "password": "Cverly",
+    "email": "Anej.Cverle@gmail.com",
+    "created": "2023-04-21T15:07:53.172+00:00"
+  },
+  {
+    "users_id": 5,
+    "username": "Anej",
+    "password": "Cverlyy",
+    "email": "Anej.Cverle@gmail.com",
+    "created": null
+  },
+  {
+    "users_id": 6,
+    "username": "Anej",
+    "password": "Cverlyy",
+    "email": "Anej.Cverle@gmail.com",
+    "created": null
+  },
+  {
+    "users_id": 2,
+    "username": "Anej",
+    "password": "Cverlyy",
+    "email": "Anej.Cverle@gmail.com",
+    "created": null
+  }
+]

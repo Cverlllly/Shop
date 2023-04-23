@@ -1,0 +1,96 @@
+@font-face {
+    src: url('Queensides-3z7Ey.ttf') format('truetype');
+}
+@font-face {
+    src: url('BaguedefreeRegular-x3rym.otf') format('truetype');
+}
+@font-face {
+    src: url('NeoglossSemibold-DOmq9.ttf') format('truetype');
+}
+
+
+.heading{
+    -fx-font-family: "Queensides";
+}
+.top_menu{
+    -fx-background-color: #00FFCA
+}
+.bottom_menu{
+    -fx-background-color: linear-gradient(to top, #0A4D68,#088395,#05BFDB,#00FFCA);
+    -fx-background-radius: 0 20px 20px 0;
+}
+.menu-buttons{
+    -fx-font-family: "Queensides";
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+    -fx-font-size: 30px;
+    -fx-background-radius: 15px;
+    -fx-border:none;
+    -fx-padding: 0;
+}
+.menu-buttons:hover{
+    -fx-background-color: transparent;
+    -fx-text-fill:#fff;
+}
+.pane{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5),5,0,0,0);
+    -fx-background-color: #fff;
+    -fx-background-radius: 8px;
+}
+.dash{
+    -fx-background-color: linear-gradient(to left, #0A4D68,#088395,#05BFDB);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5),5,0,0,0);
+    -fx-background-radius: 15px;
+}
+.table-view{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-radius: 5px;
+    -fx-border-color:linear-gradient(to left, #0A4D68,#088395,#05BFDB,#00FFCA);
+    -fx-border-width: 1.5;
+}
+.table-view .column-header-background{
+    -fx-background-color:linear-gradient(to left, #0A4D68,#088395,#05BFDB,#00FFCA) ;
+    -fx-background-radius: 5px 5px 0 0;
+    -fx-background-insets: 0 0 0 0;
+}
+.table-view .column-header, .table-menu{
+    -fx-background-color: transparent;
+    -fx-size:40px;
+}
+.table-view .column-header .label{
+    -fx-text-fill:#000;
+}
+.product-text{
+    -fx-font-size:15px;
+    -fx-font-family:'BaguedeFree-Regular';
+}
+.product-inputs{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent  #088395 transparent;
+    -fx-font-size: 15px;
+
+}
+.button-add{
+    -fx-font-family: "Swansea";
+    -fx-background-radius: 8px;
+    -fx-background-color: #05BFDB;
+    -fx-text-fill: #000;
+    -fx-font-size: 15px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5),5,0,0,0);
+}
+.button-add:hover{
+    -fx-font-family: "Swansea";
+    -fx-background-radius: 8px;
+    -fx-background-color: #ffffff ;
+    -fx-text-fill: linear-gradient(to left, #0A4D68,#088395,#05BFDB,#00FFCA);
+    -fx-font-size: 15px;
+    -fx-cursor:hand;
+    -fx-border-color:linear-gradient(to left,#088395,#05BFDB,#00FFCA);
+    -fx-border-radius:8px;
+}
+.ts{
+    -fx-font-family:'Genjiro';
+    -fx-text-fill:black;
+}

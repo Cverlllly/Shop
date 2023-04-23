@@ -76,3 +76,6 @@
     -fx-text-fill:#ffffff;
     -fx-cursor:hand;
 }
+.alert{
+    -fx-text-fill: #ff3c3c;
+}

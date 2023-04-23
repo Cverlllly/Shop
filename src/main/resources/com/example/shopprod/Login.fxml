@@ -16,9 +16,39 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
          <children>
+            <AnchorPane fx:id="forgotpass_form" layoutX="400.0" layoutY="3.0" prefHeight="500.0" prefWidth="400.0" styleClass="bg" stylesheets="@scratch.css" visible="false">
+               <children>
+                  <Label fx:id="alert1" layoutX="112.0" layoutY="152.0" styleClass="alert" />
+                  <Label layoutX="23.0" layoutY="65.0" prefHeight="75.0" prefWidth="337.0" stylesheets="@scratch.css" text="Forgot password">
+                     <font>
+                        <Font name="Century Schoolbook Bold" size="27.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="Login" />
+                        <String fx:value="for" />
+                     </styleClass>
+                  </Label>
+                  <TextField fx:id="getusername" layoutX="64.0" layoutY="206.0" prefHeight="44.0" prefWidth="255.0" promptText="Enter username" styleClass="fields">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="Proccedb" layoutX="77.0" layoutY="274.0" mnemonicParsing="false" onAction="#SendMail" prefHeight="33.0" prefWidth="229.0" styleClass="button2" text="Procced">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Backtolog" layoutX="174.0" layoutY="434.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="35.0" styleClass="button2" text="&lt;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="64.0" layoutY="152.0" prefHeight="35.0" prefWidth="255.0" text="We will contact u via email to change your password" wrapText="true" />
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="side_pane" prefHeight="500.0" prefWidth="400.0" styleClass="gradient" stylesheets="@scratch.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label layoutX="86.0" layoutY="357.0" prefHeight="44.0" prefWidth="229.0" styleClass="createacc" text="Create Account">
+                  <Label layoutX="86.0" layoutY="357.0" prefHeight="44.0" prefWidth="229.0" styleClass="createacc" text="Create Account" AnchorPane.bottomAnchor="97.0">
                      <font>
                         <Font name="Arial" size="27.0" />
                      </font>
@@ -33,7 +63,7 @@
                         <Image url="@image_2023-04-21_095741909-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="117.0" layoutY="213.0" prefHeight="75.0" prefWidth="167.0" styleClass="name" stylesheets="@heading.css" text="Shopify">
+                  <Label layoutX="101.0" layoutY="220.0" prefHeight="46.0" prefWidth="200.0" styleClass="he" stylesheets="@heading.css" text="Shopify">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -47,7 +77,8 @@
             </AnchorPane>
             <AnchorPane fx:id="login_form" layoutX="400.0" prefHeight="500.0" prefWidth="400.0" styleClass="bg" stylesheets="@scratch.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label layoutX="23.0" layoutY="65.0" prefHeight="75.0" prefWidth="292.0" stylesheets="@scratch.css" text="Login Account">
+                  <Label fx:id="alert" layoutX="112.0" layoutY="152.0" styleClass="alert" />
+                  <Label layoutX="14.0" layoutY="67.0" prefHeight="75.0" prefWidth="292.0" stylesheets="@scratch.css" text="Login account">
                      <font>
                         <Font name="Century Schoolbook Bold" size="27.0" />
                      </font>
@@ -66,16 +97,17 @@
                         <Font size="15.0" />
                      </font>
                   </PasswordField>
-                  <Button fx:id="login_button" layoutX="86.0" layoutY="382.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="229.0" styleClass="button2" text="Login">
+                  <Button fx:id="login_button" layoutX="86.0" layoutY="382.0" mnemonicParsing="false" onAction="#Login" prefHeight="33.0" prefWidth="229.0" styleClass="button2" text="Login">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Hyperlink fx:id="no_password" layoutX="88.0" layoutY="306.0" styleClass="hyper" text="Forgot password?">
+                  <Hyperlink fx:id="no_password" layoutX="88.0" layoutY="306.0" onAction="#to_forgetpass" styleClass="hyper" text="Forgot password?">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Hyperlink>
+                  <Label layoutX="112.0" layoutY="152.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="register_form" prefHeight="500.0" prefWidth="400.0" styleClass="bg" stylesheets="@scratch.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -99,7 +131,7 @@
                         <Font size="15.0" />
                      </font>
                   </PasswordField>
-                  <Button fx:id="reg_signup" layoutX="86.0" layoutY="389.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="33.0" prefWidth="229.0" styleClass="button2" text="Sign up">
+                  <Button fx:id="reg_signup" layoutX="86.0" layoutY="389.0" mnemonicParsing="false" onAction="#register" prefHeight="33.0" prefWidth="229.0" styleClass="button2" text="Sign up">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
