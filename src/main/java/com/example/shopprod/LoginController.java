@@ -150,19 +150,38 @@ public class LoginController {
             });
             delay.play();
 
-        } else {
+        } else if(id.equals("1")) {
             iduser = id;
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setContentText("Login Successful");
             alert1.showAndWait();
 
-            Parent root= FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
 
             stage.setTitle("Mainpage");
             stage.setMinHeight(800);
             stage.setMinWidth(1500);
+
+            stage.setScene(scene);
+            stage.show();
+
+            login_button.getScene().getWindow().hide();
+        }
+        else{
+            iduser = id;
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setContentText("Login Successful");
+            alert1.showAndWait();
+
+            Parent root= FXMLLoader.load(getClass().getResource("Users_panel.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+
+            stage.setTitle("Mainpage");
+            stage.setMinHeight(800);
+            stage.setMinWidth(1400);
 
             stage.setScene(scene);
             stage.show();

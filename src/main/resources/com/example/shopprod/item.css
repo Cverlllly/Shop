@@ -1,0 +1,30 @@
+.anchor{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5),5,0,0,0);
+    -fx-background-color: #fff;
+    -fx-background-radius: 8px;
+    -fx-start-margin: 20px;
+    -fx-end-margin: 20px;
+}
+.button-add{
+    -fx-font-family: "Swansea";
+    -fx-background-radius: 8px;
+    -fx-background-color: #05BFDB;
+    -fx-text-fill: #000;
+    -fx-font-size: 15px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5),5,0,0,0);
+}
+.button-add:hover{
+    -fx-font-family: "Swansea";
+    -fx-background-radius: 8px;
+    -fx-background-color: #ffffff ;
+    -fx-text-fill: linear-gradient(to left, #0A4D68,#088395,#05BFDB,#00FFCA);
+    -fx-font-size: 15px;
+    -fx-cursor:hand;
+    -fx-border-color:linear-gradient(to left,#088395,#05BFDB,#00FFCA);
+    -fx-border-radius:8px;
+}
+.imgbg{
+    -fx-background-color: #efefef ;
+    -fx-background-radius: 20px;
+}

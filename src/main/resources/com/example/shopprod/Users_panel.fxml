@@ -2,64 +2,99 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="sp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopprod.UsersPanelController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <top>
-            <AnchorPane prefHeight="128.0" prefWidth="1400.0" styleClass="topbg" stylesheets="@heading.css" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="129.0" prefWidth="1452.0" styleClass="topbg" stylesheets="@heading.css" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane prefHeight="129.0" prefWidth="400.0">
+                  <AnchorPane fx:id="bckToMain" prefHeight="129.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <ImageView fitHeight="112.0" fitWidth="99.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image_2023-04-21_095741909-removebg-preview.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="124.0" layoutY="19.0" prefHeight="91.0" prefWidth="276.0" styleClass="main" stylesheets="@heading.css" text="SHOPIFY">
+                        <Label layoutX="124.0" layoutY="19.0" onMouseClicked="#DisplayItems" prefHeight="91.0" prefWidth="299.0" styleClass="main" stylesheets="@heading.css" text="SHOPIFY">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
+                        <Label fx:id="number_items" alignment="CENTER" layoutX="1259.0" layoutY="39.0" prefHeight="19.0" prefWidth="20.0" style="-fx-border-radius: 99999; -fx-border-color: #000;" AnchorPane.bottomAnchor="71.0" AnchorPane.rightAnchor="121.0" />
                      </children>
                   </AnchorPane>
-                  <TextField layoutX="986.0" layoutY="46.0" prefHeight="38.0" prefWidth="208.0" styleClass="searchbar" />
-                  <Button layoutX="1195.0" layoutY="47.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="30.0" styleClass="topbtns">
+                  <TextField fx:id="searchBar" layoutX="986.0" layoutY="46.0" prefHeight="38.0" prefWidth="208.0" styleClass="searchbar" AnchorPane.rightAnchor="221.0" />
+                  <Button fx:id="search_btn" layoutX="1195.0" layoutY="47.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="30.0" styleClass="topbtns" AnchorPane.rightAnchor="190.0">
                      <graphic>
                         <FontAwesomeIcon glyphName="SEARCH" size="1.5em" styleClass="topbtns" wrappingWidth="11.142857551574707" />
                      </graphic>
                   </Button>
-                  <Button layoutX="1256.0" layoutY="43.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="39.0" styleClass="topbtns">
+                  <Button fx:id="cart" layoutX="1256.0" layoutY="43.0" mnemonicParsing="false" onAction="#onClickCart" prefHeight="36.0" prefWidth="39.0" styleClass="topbtns" AnchorPane.rightAnchor="107.0">
                      <graphic>
                         <FontAwesomeIcon glyphName="SHOPPING_CART" size="3em" styleClass="topbtns" wrappingWidth="35.42856979370117" />
                      </graphic>
                   </Button>
-                  <Button layoutX="1330.0" layoutY="45.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="22.0" styleClass="topbtns">
+                  <Button fx:id="user" layoutX="1330.0" layoutY="45.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="6.0" styleClass="topbtns" AnchorPane.rightAnchor="41.0">
                      <graphic>
-                        <FontAwesomeIcon glyphName="USER" size="2.5em" styleClass="topbtns" wrappingWidth="27.428569793701172" />
+                        <FontAwesomeIcon caretBias="false" glyphName="USER" size="2.5em" styleClass="topbtns" wrappingWidth="27.428569793701172" />
                      </graphic>
+                     <contextMenu>
+                        <ContextMenu fx:id="menu">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
                   </Button>
                </children>
             </AnchorPane>
          </top>
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="702.0" prefWidth="1430.0" BorderPane.alignment="CENTER">
                <children>
-                  <ScrollPane layoutX="-6.0" prefHeight="671.0" prefWidth="1406.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="783.0" prefWidth="1383.0" />
-                    </content>
-                  </ScrollPane>
+                  <AnchorPane fx:id="shop_pane" layoutX="5.0" layoutY="-4.0" prefHeight="671.0" prefWidth="1400.0" styleClass="ScrollPane" stylesheets="@heading.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ScrollPane fx:id="scroll_pane" prefHeight="680.0" prefWidth="1400.0" styleClass="ScrollPane" stylesheets="@heading.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <GridPane fx:id="displayitems" alignment="CENTER" prefHeight="18.0" prefWidth="100.0" styleClass="gridis" stylesheets="@heading.css">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="cart_pane" layoutX="4.0" prefHeight="686.0" prefWidth="1423.0" styleClass="ScrollPane" stylesheets="@heading.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ScrollPane fx:id="cart_scroll" prefHeight="578.0" prefWidth="1400.0" styleClass="ScrollPane" stylesheets="@heading.css" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <GridPane fx:id="display_cart" alignment="CENTER" prefHeight="18.0" prefWidth="100.0" styleClass="gridis" stylesheets="@heading.css">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                        <Button fx:id="finish_button" layoutX="1252.0" layoutY="608.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" styleClass="button-add" stylesheets="@item.css" text="FINISH" AnchorPane.bottomAnchor="38.0" AnchorPane.rightAnchor="57.0" />
+                        <Label fx:id="total" layoutX="991.0" layoutY="612.0" text="TOTAL AMOUNT: " AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="313.0" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </center>

@@ -15,7 +15,7 @@
     -fx-background-color: linear-gradient(to right, #0A4D68,#088395,#05BFDB,#00FFCA);
 }
 .topbtns{
-    -fx-background-color: transparent;
+    -fx-background-color: transparent!important;
 }
 .topbtns:hover{
     -fx-background-color: transparent;
@@ -24,4 +24,12 @@
 .searchbar{
     -fx-background-color: transparent;
     -fx-border-color: transparent transparent black transparent;
+}
+GridPane {
+    -fx-hgap: 20;
+    -fx-vgap: 20;
+    -fx-padding:10px 10px 10px 60px;
+}
+.ScrollPane{
+    -fx-alignment: center;
 }
