@@ -33,13 +33,13 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <TextField layoutX="986.0" layoutY="46.0" prefHeight="38.0" prefWidth="208.0" styleClass="searchbar" />
-                  <Button layoutX="1195.0" layoutY="47.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="30.0" styleClass="topbtns">
+                  <TextField fx:id="searchBar" layoutX="986.0" layoutY="46.0" prefHeight="38.0" prefWidth="208.0" styleClass="searchbar" />
+                  <Button fx:id="search_btn" layoutX="1195.0" layoutY="47.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="30.0" styleClass="topbtns">
                      <graphic>
                         <FontAwesomeIcon glyphName="SEARCH" size="1.5em" styleClass="topbtns" wrappingWidth="11.142857551574707" />
                      </graphic>
                   </Button>
-                  <Button layoutX="1256.0" layoutY="43.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="39.0" styleClass="topbtns">
+                  <Button fx:id="cart" layoutX="1256.0" layoutY="43.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="39.0" styleClass="topbtns">
                      <graphic>
                         <FontAwesomeIcon glyphName="SHOPPING_CART" size="3em" styleClass="topbtns" wrappingWidth="35.42856979370117" />
                      </graphic>
@@ -57,7 +57,7 @@
                <children>
                   <ScrollPane layoutX="-6.0" prefHeight="671.0" prefWidth="1406.0">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="783.0" prefWidth="1383.0" />
+                      <AnchorPane fx:id="displayitems" minHeight="0.0" minWidth="0.0" prefHeight="783.0" prefWidth="1383.0" />
                     </content>
                   </ScrollPane>
                </children>
