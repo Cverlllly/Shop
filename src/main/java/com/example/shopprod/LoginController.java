@@ -171,7 +171,7 @@ public class LoginController {
         }
     }
 
-    public String hashpass(String pass) {
+    public static String hashpass(String pass) {
         MessageDigest m = null;
         try {
             m = MessageDigest.getInstance("MD5");

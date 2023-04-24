@@ -14,6 +14,10 @@ module com.example.shopprod {
     requires java.net.http;
     requires org.json;
     requires java.sql;
+    requires spring.jcl;
+    requires commons.codec;
+    requires org.apache.commons.io;
+    requires java.json;
 
     opens com.example.shopprod to javafx.fxml;
     exports com.example.shopprod;

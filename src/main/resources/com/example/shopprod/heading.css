@@ -6,3 +6,22 @@
     -fx-font-family:'Genjiro'!important;
     -fx-text-fill:black;
 }
+.main{
+    -fx-font-size: 70px;
+    -fx-font-family:'Genjiro'!important;
+    -fx-text-fill:black;
+}
+.topbg{
+    -fx-background-color: linear-gradient(to right, #0A4D68,#088395,#05BFDB,#00FFCA);
+}
+.topbtns{
+    -fx-background-color: transparent;
+}
+.topbtns:hover{
+    -fx-background-color: transparent;
+    -fx-fill:white;
+}
+.searchbar{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent black transparent;
+}
