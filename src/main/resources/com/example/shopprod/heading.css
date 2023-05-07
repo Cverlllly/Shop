@@ -28,8 +28,8 @@
 GridPane {
     -fx-hgap: 20;
     -fx-vgap: 20;
-    -fx-padding:10px 10px 10px 60px;
+    -fx-padding:10px;
+    -fx-alignment: center;
 }
 .ScrollPane{
-    -fx-alignment: center;
 }

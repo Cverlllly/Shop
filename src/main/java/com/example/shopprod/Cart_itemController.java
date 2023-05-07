@@ -1,5 +1,7 @@
 package com.example.shopprod;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -33,14 +35,20 @@ public class Cart_itemController {
     private Label price;
 
     @FXML
-    private ChoiceBox<?> qty;
+    private ChoiceBox<String> qty;
     private Product product;
 
     public void setData(Product prod) throws IOException {
         this.product = prod;
-
+        ObservableList<String> items = FXCollections.observableArrayList();
+        for(int s=0;s<Integer.parseInt(product.getQty());s++){
+            items.add(String.valueOf(s));
+        }
+        qty.setItems(items);
+        qty.setValue(product.getQty());
+        qty.setDisable(true);
         name.setText(product.getName());
-        price.setText(String.valueOf(product.getPrice()));
+        price.setText(String.valueOf(product.getPrice())+"€");
         byte[] img = product.getImg();
         InputStream in = new ByteArrayInputStream(img);
         BufferedImage bufferedImage = ImageIO.read(in);

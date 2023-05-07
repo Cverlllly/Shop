@@ -1,13 +1,13 @@
 package com.example.shopprod;
 
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -37,6 +37,9 @@ public class ItemController implements Initializable {
     private Button add_item;
 
     @FXML
+    private ChoiceBox<String> qtyOFitems;
+
+    @FXML
     private Button more_item;
 
     @FXML
@@ -58,7 +61,13 @@ public class ItemController implements Initializable {
         this.product = prod;
 
         prod_name.setText(product.getName());
-        prod_price.setText(String.valueOf(product.getPrice()));
+        ObservableList<String> items = FXCollections.observableArrayList();
+        for(int s=1;s<Integer.parseInt(product.getQty())+1;s++){
+            items.add(String.valueOf(s));
+        }
+        qtyOFitems.setItems(items);
+        qtyOFitems.setValue("1");
+        prod_price.setText(String.valueOf(product.getPrice())+"€");
         byte[] img = product.getImg();
         InputStream in = new ByteArrayInputStream(img);
         BufferedImage bufferedImage = ImageIO.read(in);
@@ -75,7 +84,7 @@ public class ItemController implements Initializable {
                     System.out.println(formattedDate);
                     CreateNewOrder(formattedDate, generate_conNumber(), prod.getPrice(), false);
                 } else {
-                    CreateNewOrder_item(prod, 2);
+                    CreateNewOrder_item(prod, qtyOFitems.getValue());
                 }
             } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
@@ -164,7 +173,7 @@ public class ItemController implements Initializable {
         return 0L;
     }
 
-    public void CreateNewOrder_item(Product prod, Integer qty) throws IOException, InterruptedException {
+    public void CreateNewOrder_item(Product prod, String qty) throws IOException, InterruptedException {
         URL obj = new URL("http://localhost:8080/order_item");
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("POST");
@@ -180,7 +189,7 @@ public class ItemController implements Initializable {
 
         jsonOrderItem.put("order", jsonOrder);
         jsonOrderItem.put("product", jsonProduct);
-        jsonOrderItem.put("qty", qty);
+        jsonOrderItem.put("qty", Integer.parseInt(qty));
 
 
         String jsonInputString = jsonOrderItem.toString();

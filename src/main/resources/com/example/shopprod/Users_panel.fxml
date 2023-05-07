@@ -29,7 +29,7 @@
                               <Image url="@image_2023-04-21_095741909-removebg-preview.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="124.0" layoutY="19.0" onMouseClicked="#DisplayItems" prefHeight="91.0" prefWidth="299.0" styleClass="main" stylesheets="@heading.css" text="SHOPIFY">
+                        <Label layoutX="124.0" layoutY="19.0" onMouseClicked="#backToShop" prefHeight="91.0" prefWidth="299.0" styleClass="main" stylesheets="@heading.css" text="SHOPIFY">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -67,11 +67,11 @@
          <center>
             <AnchorPane prefHeight="702.0" prefWidth="1430.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="shop_pane" layoutX="5.0" layoutY="-4.0" prefHeight="671.0" prefWidth="1400.0" styleClass="ScrollPane" stylesheets="@heading.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="shop_pane" layoutX="5.0" layoutY="-4.0" prefHeight="671.0" prefWidth="1400.0" styleClass="ScrollPane" stylesheets="@heading.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ScrollPane fx:id="scroll_pane" prefHeight="680.0" prefWidth="1400.0" styleClass="ScrollPane" stylesheets="@heading.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane fx:id="scroll_pane" fitToHeight="true" fitToWidth="true" prefHeight="671.0" prefWidth="1400.0" styleClass="ScrollPane" stylesheets="@heading.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
-                              <GridPane fx:id="displayitems" alignment="CENTER" prefHeight="18.0" prefWidth="100.0" styleClass="gridis" stylesheets="@heading.css">
+                              <GridPane fx:id="displayitems" alignment="CENTER" prefHeight="12.0" prefWidth="0.0" styleClass="gridis" stylesheets="@heading.css">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                 </columnConstraints>
@@ -80,9 +80,9 @@
                         </ScrollPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="cart_pane" layoutX="4.0" prefHeight="686.0" prefWidth="1423.0" styleClass="ScrollPane" stylesheets="@heading.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="cart_pane" layoutX="4.0" prefHeight="686.0" prefWidth="1423.0" styleClass="ScrollPane" stylesheets="@heading.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ScrollPane fx:id="cart_scroll" prefHeight="578.0" prefWidth="1400.0" styleClass="ScrollPane" stylesheets="@heading.css" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane fx:id="cart_scroll" fitToHeight="true" fitToWidth="true" prefHeight="574.0" prefWidth="1400.0" styleClass="ScrollPane" stylesheets="@heading.css" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
                               <GridPane fx:id="display_cart" alignment="CENTER" prefHeight="18.0" prefWidth="100.0" styleClass="gridis" stylesheets="@heading.css">
                                  <columnConstraints>
@@ -92,7 +92,10 @@
                            </content>
                         </ScrollPane>
                         <Button fx:id="finish_button" layoutX="1252.0" layoutY="608.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" styleClass="button-add" stylesheets="@item.css" text="FINISH" AnchorPane.bottomAnchor="38.0" AnchorPane.rightAnchor="57.0" />
-                        <Label fx:id="total" layoutX="991.0" layoutY="612.0" text="TOTAL AMOUNT: " AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="313.0" />
+                        <Label fx:id="total" layoutX="991.0" layoutY="612.0" text="TOTAL AMOUNT: " AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="313.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                </children>

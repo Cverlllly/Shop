@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +16,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="79.0" prefWidth="424.0">
                <children>
-                  <Label fx:id="prod_name" prefHeight="20.0" prefWidth="307.0" text="keyboard">
+                  <Label fx:id="prod_name" prefHeight="51.0" prefWidth="302.0" text="Logitech G502 HERO gaming miška" wrapText="true">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -23,7 +24,7 @@
                         <Insets left="15.0" />
                      </HBox.margin>
                   </Label>
-                  <Label fx:id="prod_price" prefHeight="21.0" prefWidth="75.0" text="price">
+                  <Label fx:id="prod_price" prefHeight="21.0" prefWidth="56.0" text="price">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -38,17 +39,14 @@
                   <ImageView fx:id="prod_img" fitHeight="180.0" fitWidth="239.0" layoutX="61.0" layoutY="12.0" pickOnBounds="true" />
                </children>
             </AnchorPane>
-            <HBox alignment="CENTER" prefHeight="98.0" prefWidth="400.0">
+            <HBox alignment="CENTER" prefHeight="98.0" prefWidth="400.0" style="-fx-spacing: 100px;">
                <children>
-                  <Button fx:id="add_item" mnemonicParsing="false" prefHeight="4.0" prefWidth="64.0" styleClass="button-add" text="ADD" />
-                  <Button fx:id="more_item" mnemonicParsing="false" prefHeight="15.0" prefWidth="67.0" styleClass="button-add" text="MORE">
-                     <HBox.margin>
-                        <Insets left="200.0" />
-                     </HBox.margin>
-                  </Button>
+                  <Button fx:id="add_item" mnemonicParsing="false" prefHeight="21.0" prefWidth="89.0" styleClass="button-add" text="ADD" />
+                  <ChoiceBox fx:id="qtyOFitems" prefHeight="25.0" prefWidth="78.0" />
                </children>
             </HBox>
          </children>
       </VBox>
+      <Button fx:id="more_item" mnemonicParsing="false" prefHeight="21.0" prefWidth="0.0" styleClass="button-add" text="MORE" visible="false" />
    </children>
 </AnchorPane>

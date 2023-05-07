@@ -112,6 +112,8 @@ public class UsersPanelController implements Initializable {
 
     }
 
+    public Double totalamount=0.0;
+
     public void DisplayItems() throws IOException, InterruptedException {
         CardData.clear();
         CardData.addAll(getData());
@@ -152,6 +154,7 @@ public class UsersPanelController implements Initializable {
     }
 
     public List<Product> getAllOrders() throws IOException, InterruptedException {
+        totalamount=0.0;
         List<Product> prod_list = new ArrayList<>();
         prod_list.clear();
         HttpClient client = HttpClient.newHttpClient();
@@ -175,6 +178,7 @@ public class UsersPanelController implements Initializable {
                 System.out.println("User: " + user_id + " Prduct: " + prod_id);
                 String prod_name = (String) prod.get("name");
                 Double prod_price = (Double) prod.get("price");
+                totalamount=totalamount+prod_price;
                 String imageString = (String) prod.get("image");
                 if (imageString == null) {
                     System.out.println(imageString);
@@ -186,6 +190,7 @@ public class UsersPanelController implements Initializable {
                 }
             }
         }
+        total.setText("Total amount: "+String.valueOf(totalamount)+"€");
         number_items.setText(String.valueOf(prod_list.size()));
         return prod_list;
     }
@@ -248,6 +253,12 @@ public class UsersPanelController implements Initializable {
     }
 
     public void onClickCart() throws IOException, InterruptedException {
+        shop_pane.setVisible(false);
+        cart_pane.setVisible(true);
         Cart_items();
+    }
+    public void backToShop(){
+        shop_pane.setVisible(true);
+        cart_pane.setVisible(false);
     }
 }
