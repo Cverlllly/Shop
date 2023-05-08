@@ -663,7 +663,7 @@ public class MainPageController {
         int responseCode = connection.getResponseCode();
         System.out.println(responseCode);
     }
-    public byte[] getImage(Long id) throws IOException, InterruptedException {
+    public String getImage(Long id) throws IOException, InterruptedException, ParseException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/product/"+id))
@@ -671,10 +671,9 @@ public class MainPageController {
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response);
-        JSONArray jsonArray = (JSONArray) JSONValue.parse(response.body());
-        JSONObject jsonObject = (JSONObject) jsonArray.get(1);
+        JSONParser parser = new JSONParser();
+        JSONObject jsonObject = (JSONObject) parser.parse(response.body());
         String imageString = (String) jsonObject.get("image");
-        byte[] imageBytes = Base64.getDecoder().decode(imageString);
-        return imageBytes;
+        return imageString;
     }
 }
