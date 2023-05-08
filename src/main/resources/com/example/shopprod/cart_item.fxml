@@ -17,8 +17,11 @@
             <Font size="19.0" />
          </font>
       </Label>
-      
-
+      <Label fx:id="price" layoutX="835.0" layoutY="34.0" text="Price">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
       <ChoiceBox fx:id="qty" layoutX="979.0" layoutY="36.0" prefHeight="25.0" prefWidth="65.0" />
    </children>
    <padding>

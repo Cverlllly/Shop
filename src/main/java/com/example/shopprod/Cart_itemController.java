@@ -19,24 +19,7 @@ import java.io.InputStream;
 
 public class Cart_itemController {
 
-    @FXML
-    private AnchorPane cart_pane;
-
-    @FXML
-    private Button delete_cart;
-
-    @FXML
-    private ImageView image;
-
-    @FXML
-    private Label name;
-
-    @FXML
-    private Label price;
-
-    @FXML
-    private ChoiceBox<String> qty;
-    private Product product;
+   
 
     public void setData(Product prod) throws IOException {
         this.product = prod;
