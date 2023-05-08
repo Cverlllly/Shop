@@ -370,7 +370,7 @@ public class MainPageController {
 
     public void Delete() throws IOException, InterruptedException {
         if (id != null) {
-
+            deleteFirst();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Are u sure");
             alert.setContentText("Are you sure u want to delete this product " + product_field.getText() + " with serial number " + serial_field.getText());
@@ -378,35 +378,14 @@ public class MainPageController {
                 if (rs == ButtonType.OK) {
                     System.out.println("Pressed OK.");
                     Long idd = (Long) id;
-                    URL obj = null;
                     try {
-                        obj = new URL("http://localhost:8080/product/" + idd);
-                    } catch (MalformedURLException e) {
-                        throw new RuntimeException(e);
-                    }
-                    HttpURLConnection connection = null;
-                    try {
-                        connection = (HttpURLConnection) obj.openConnection();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                    try {
+                        URL obj = new URL("http://localhost:8080/product/" + idd);
+                        HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
                         connection.setRequestMethod("DELETE");
-                    } catch (ProtocolException e) {
-                        throw new RuntimeException(e);
-                    }
-                    int responseCode = 0;
-                    try {
-                        responseCode = connection.getResponseCode();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                    System.out.println(responseCode);
-                    try {
+                        int responseCode = connection.getResponseCode();
+                        System.out.println(responseCode);
                         FillTableProd();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    } catch (InterruptedException e) {
+                    } catch (IOException | InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
@@ -676,6 +655,13 @@ public class MainPageController {
             });
 
         }
+    }
+    public void deleteFirst() throws IOException {
+        URL obj = new URL ("http://localhost:8080/order_item/product/" + id);
+        HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
+        connection.setRequestMethod("DELETE");
+        int responseCode = connection.getResponseCode();
+        System.out.println(responseCode);
     }
 
 }
